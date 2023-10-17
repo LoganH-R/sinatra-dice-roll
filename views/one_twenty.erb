@@ -1,9 +1,20 @@
 <h1>1d20</h1>
 
-<% if @die == 1 %>
-  <p style="color:red"><%= @outcome %></p>
-<% elsif @die == 20 %>
-  <p style="color: green"><%= @outcome %></p>
-<% else %>
-  <p><%= @outcome %></p>
-<% end %>
+<ul>
+  <% @rolls.each do |a_roll| %>
+    <% if a_roll == 1 %>
+      <li>
+        <p style="color: red"><%= a_roll %></p>
+      </li>
+    <% elsif a_roll == 20 %>
+      <li>
+        <p style="color: green"><%= a_roll %></p>
+      </li>
+    <% else %>
+      <li>
+        <%= a_roll %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
